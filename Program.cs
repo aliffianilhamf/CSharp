@@ -166,3 +166,38 @@ class Program
     }
 }
 */
+//STATIC CLASS
+// Sebuah non static class , Bukan karakteristik ataupun perilaku object dari class tersebut
+// Melainkan perilaku atau kharakteristik dari class itu sendiri.
+
+// non-static class
+class Mobil
+{
+    // anggota penyusun class yang dideklarasikan sebagai static
+    // static field
+    private static int JmlObjMobil = 0;
+    // constructor
+    public Mobil()
+    {
+        JmlObjMobil++;
+    }
+    // anggota penyusun class yang dideklarasikan sebagai static
+    // static method
+    public static void TotalObjMobil()
+    {
+        Console.WriteLine("Ada {0} mobil", JmlObjMobil);
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Mobil.TotalObjMobil();
+        Mobil sedan = new Mobil();
+        Mobil.TotalObjMobil();
+        Mobil pickup = new Mobil();
+        Mobil.TotalObjMobil();
+        Console.ReadLine();
+    }
+}
