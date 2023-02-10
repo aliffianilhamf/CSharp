@@ -166,6 +166,7 @@ class Program
     }
 }
 */
+/*
 //STATIC CLASS
 // Sebuah non static class , Bukan karakteristik ataupun perilaku object dari class tersebut
 // Melainkan perilaku atau kharakteristik dari class itu sendiri.
@@ -201,3 +202,82 @@ class Program
         Console.ReadLine();
     }
 }
+*/
+/*
+class Mobil
+{
+    private int JmlObjMobil = 0;
+    public Mobil()
+    {
+        JmlObjMobil++;
+    }
+    public void TotalObjMobil()
+    {
+        Console.WriteLine("Ada {0} mobil", JmlObjMobil);
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Method non-static tidak bisa dipanggil dengan cara ini
+        // Mobil.TotalObjMobil();
+        Mobil sedan = new Mobil();
+        // Mobil.TotalObjMobil();
+        // method TotalObjMobil() yang terkait dengan objek sedan
+        sedan.TotalObjMobil();
+        Mobil pickup = new Mobil();
+        // Mobil.TotalObjMobil();
+        // method TotalObjMobil() yang terkait dengan objek pickup
+        pickup.TotalObjMobil();
+        Console.ReadLine();
+    }
+}
+// Mengapa keluarannya berbeda dengan kode program sebelumnya?
+//Karena kini field JmlObjMobil merupakan non-static field, maka field tersebut akan menjadi 
+//terkait dengan masing-masing objek yang dibuat dari class Mobil.
+*/
+
+/*
+//STATIC CONSTRUCTOR
+class Mobil
+{
+    public string pabrikan;
+    public string tipe;
+    public int thnPembuatan;
+    public static int kecepatanMax;
+    // static constructor
+    static Mobil()
+    {
+        kecepatanMax = 200; //km per jam
+        Console.WriteLine("Kecepatan maximum pada speedometer adalah {0}", kecepatanMax);
+    }
+    // Parameterized Constructor
+    public Mobil(string pabrikan, string tipe, int thnPembuatan)
+    {
+        this.pabrikan = pabrikan;
+        this.tipe = tipe;
+        this.thnPembuatan = thnPembuatan;
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        // objek mobilToyota
+        Console.WriteLine("--- objek mobilToyota1 ---");
+        Mobil mobilToyota = new Mobil("Toyota", "Hatchback", 2019);
+        Console.WriteLine(mobilToyota.pabrikan);
+        Console.WriteLine(mobilToyota.tipe);
+        Console.WriteLine(mobilToyota.thnPembuatan);
+        // objek mobilMazda
+        Console.WriteLine("--- objek mobilToyota1 ---");
+        Mobil mobilMazda = new Mobil("Mazda", "SUV", 2019);
+        Console.WriteLine(mobilMazda.pabrikan);
+        Console.WriteLine(mobilMazda.tipe);
+        Console.WriteLine(mobilMazda.thnPembuatan);
+        Console.WriteLine("\nTekan Enter untuk keluar..");
+        Console.ReadLine();
+    }
+}
+*/
