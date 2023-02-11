@@ -355,3 +355,41 @@ class Program
 //class Motor yang menjadi blueprint dari objek motor mewarisi seluruh karakteristik dan perilaku
 //dari class KendaraanBermotor
 */
+
+//METHOD HIDING
+abstract class KendaraanBermotor
+{
+    public void Jalan()
+    {
+        Console.WriteLine("Berjalan maju");
+    }
+}
+class Mobil : KendaraanBermotor
+{
+    public new void Jalan()
+    {
+        Console.WriteLine("Menjalankan sebuah mobil:");
+        Console.WriteLine("1.Memindah tuas transmisi dari N ke D");
+        Console.WriteLine("2.Injak pedal gas");
+    }
+}
+class Motor : KendaraanBermotor
+{
+    public new void Jalan()
+    {
+        Console.WriteLine("Menjalankan sebuah motor:");
+        Console.WriteLine("1.Putar handle gas");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Mobil mobil = new Mobil();
+        Motor motor = new Motor();
+        mobil.Jalan();
+        Console.WriteLine("");
+        motor.Jalan();
+        Console.ReadLine();
+    }
+}
