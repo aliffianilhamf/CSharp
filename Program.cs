@@ -281,3 +281,77 @@ class Program
     }
 }
 */
+/*
+//PEWARISAN
+class KendaraanBermotor
+{
+    public int JmlRoda { get; set; }
+    public string BahanBakar { get; set; }
+    public string NoPolisi { get; set; }
+    public string Transmisi { get; set; }
+    public void HidupkanMesin()
+    {
+        Console.WriteLine("Mesin Kendaraan dihidupkan");
+    }
+    public void MatikanMesin()
+    {
+        Console.WriteLine("Mesin Kendaraan dimatikan");
+    }
+    public void Jalan()
+    {
+        Console.WriteLine("Berjalan");
+    }
+}
+class Mobil : KendaraanBermotor
+{
+    public Mobil()
+    {
+        this.JmlRoda = 4;
+        this.BahanBakar = "Pertalite";
+        this.Transmisi = "Otomatis";
+    }
+}
+class Motor : KendaraanBermotor
+{
+    public Motor()
+    {
+        this.JmlRoda = 2;
+        this.BahanBakar = "Premium";
+        this.Transmisi = "Otomatis";
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        // instantiasi objek mobil
+        Mobil mobil = new Mobil();
+        mobil.NoPolisi = "AB 1234 CD";
+        Console.WriteLine("Objek Mobil:");
+        Console.WriteLine("Jumlah roda: {0}", mobil.JmlRoda);
+        Console.WriteLine("Bahan bakar: {0}", mobil.BahanBakar);
+        Console.WriteLine("Nomor polisi: {0}", mobil.NoPolisi);
+        Console.WriteLine("Transmisi: {0}", mobil.Transmisi);
+        mobil.HidupkanMesin();
+        mobil.Jalan();
+        mobil.MatikanMesin();
+        // instantiasi objek motor
+        Motor motor = new Motor();
+        motor.NoPolisi = "AB 5678 CD";
+        Console.WriteLine("\nObjek Motor:");
+        Console.WriteLine("Jumlah roda: {0}", motor.JmlRoda);
+        Console.WriteLine("Bahan bakar: {0}", motor.BahanBakar);
+        Console.WriteLine("Nomor Polisi: {0}", motor.NoPolisi);
+        Console.WriteLine("Transmisi: {0}", motor.Transmisi);
+        motor.HidupkanMesin();
+        motor.Jalan();
+        motor.MatikanMesin();
+        Console.ReadLine();
+    }
+}
+//Perhatikan bahwa dengan membuat objek mobil dari class Mobil dan objek motor dari class Motor, 
+//kita bahkan bisa mengakses seluruh properti dan method dari class KendaraanBermotor melalui kedua
+//objek tersebut. Ini dimungkinkan karena class Mobil yang menjadi blueprint dari objek mobil dan
+//class Motor yang menjadi blueprint dari objek motor mewarisi seluruh karakteristik dan perilaku
+//dari class KendaraanBermotor
+*/
