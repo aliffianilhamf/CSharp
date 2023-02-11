@@ -356,6 +356,7 @@ class Program
 //dari class KendaraanBermotor
 */
 
+/*
 //METHOD HIDING
 abstract class KendaraanBermotor
 {
@@ -393,3 +394,80 @@ class Program
         Console.ReadLine();
     }
 }
+*/
+/*
+//METHOD OVERIDING
+//Abstract Method
+abstract class KendaraanBermotor
+{
+    public abstract void Jalan();
+}
+class Mobil : KendaraanBermotor
+{
+    public override void Jalan()
+    {
+        Console.WriteLine("Menjalankan sebuah mobil:");
+        Console.WriteLine("1.Memindah tuas transmisi dari N ke D");
+        Console.WriteLine("2.Injak pedal gas");
+    }
+}
+class Motor : KendaraanBermotor
+{
+    public override void Jalan()
+    {
+        Console.WriteLine("Menjalankan sebuah motor:");
+        Console.WriteLine("1.Putar handle gas");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Mobil mobil = new Mobil();
+        Motor motor = new Motor();
+
+        mobil.Jalan();
+        Console.WriteLine("");
+        motor.Jalan();
+        Console.ReadLine();
+    }
+}
+
+//Virtual Method
+abstract class KendaraanBermotor
+{
+    public virtual void Jalan()
+    {
+        Console.WriteLine("Berjalan maju");
+    }
+}
+class Mobil : KendaraanBermotor
+{
+    public override void Jalan()
+    {
+        Console.WriteLine("Menjalankan sebuah mobil:");
+        Console.WriteLine("1.Memindah tuas transmisi dari N ke D");
+        Console.WriteLine("2.Injak pedal gas");
+    }
+}
+class Motor : KendaraanBermotor
+{
+    public override void Jalan()
+    {
+        Console.WriteLine("Menjalankan sebuah motor:");
+        Console.WriteLine("1.Putar handle gas");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Mobil mobil = new Mobil();
+        Motor motor = new Motor();
+        mobil.Jalan();
+        Console.WriteLine("");
+        motor.Jalan();
+        Console.ReadLine();
+    }
+}
+*/
