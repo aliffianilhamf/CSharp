@@ -471,3 +471,46 @@ class Program
     }
 }
 */
+
+//POLIMORFISME
+class KendaraanBermotor
+{
+    public virtual void Jalankan()
+    {
+        Console.WriteLine("Berjalan maju");
+    }
+}
+class Mobil : KendaraanBermotor
+{
+    public override void Jalankan()
+    {
+        Console.WriteLine("Menjalankan sebuah mobil:");
+        Console.WriteLine("1.Memindah tuas transmisi dari N ke D");
+        Console.WriteLine("2.Injak pedal gas");
+    }
+}
+class Motor : KendaraanBermotor
+{
+    public override void Jalankan()
+    {
+        Console.WriteLine("Menjalankan sebuah motor:");
+        Console.WriteLine("1.Putar handle gas");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        KendaraanBermotor mobil = new Mobil();
+        KendaraanBermotor motor = new Motor();
+        mobil.Jalankan();
+        Console.WriteLine("");
+        motor.Jalankan();
+        Console.ReadLine();
+    }
+}
+//Kali ini kita membuat objek mobil dan motor dari tipe KendaraanBermotor.
+//Inilah yang disebut dengan polimorfisme. Ketika sebuah objek dari tipe KendaraanBermotor diberi
+// referensi ke tipe Mobil, maka objek tersebut akan berperilaku seperti objek bertipe Mobil. 
+//Begitu pula ketika objek tersebut diberi referensi ke tipe Motor, maka dia akan berperilaku 
+//seperti objek bertipe Motor.
