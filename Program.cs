@@ -622,3 +622,36 @@ class Program
     }
 }
 */
+
+/*
+//IMPLEMENTASI LEBIH DARI SATU INTERFACE
+public interface IBisaDichargeListrik
+{
+    string ChargeBaterai();
+}
+public interface IBisaDiisiBahanBakar
+{
+    string IsiBahanBakar();
+}
+class MobilHybrid : IBisaDiisiBahanBakar, IBisaDichargeListrik
+{
+    public string ChargeBaterai()
+    {
+        return "Mengisi Baterai";
+    }
+    public string IsiBahanBakar()
+    {
+        return "Mengisi Bahan Bakar";
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        MobilHybrid toyotaPrius = new MobilHybrid();
+        Console.WriteLine(toyotaPrius.ChargeBaterai());
+        Console.WriteLine(toyotaPrius.IsiBahanBakar());
+        Console.ReadLine();
+    }
+}
+*/
