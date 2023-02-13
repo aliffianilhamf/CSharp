@@ -472,6 +472,7 @@ class Program
 }
 */
 
+/*
 //POLIMORFISME
 class KendaraanBermotor
 {
@@ -514,3 +515,110 @@ class Program
 // referensi ke tipe Mobil, maka objek tersebut akan berperilaku seperti objek bertipe Mobil. 
 //Begitu pula ketika objek tersebut diberi referensi ke tipe Motor, maka dia akan berperilaku 
 //seperti objek bertipe Motor.
+*/
+
+/*
+//ANTARMUKA FOLIMORFISME
+abstract class KendaraanBermotor
+{
+    public virtual void Jalankan()
+    {
+        Console.WriteLine("Berjalan maju");
+    }
+}
+class Mobil : KendaraanBermotor
+{
+    public override void Jalankan()
+    {
+        Console.WriteLine("Menjalankan sebuah mobil:");
+        Console.WriteLine("1.Memindah tuas transmisi dari N ke D");
+        Console.WriteLine("2.Injak pedal gas");
+    }
+}
+class Motor : KendaraanBermotor
+{
+    public override void Jalankan()
+    {
+        Console.WriteLine("Menjalankan sebuah motor:");
+        Console.WriteLine("1.Putar handle gas");
+    }
+}
+class Pengemudi
+{
+    public void Mengemudi(KendaraanBermotor kb)
+    {
+        kb.Jalankan();
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        KendaraanBermotor mobil = new Mobil();
+        KendaraanBermotor motor = new Motor();
+        Pengemudi pengemudi = new Pengemudi();
+        pengemudi.Mengemudi(mobil);
+        Console.WriteLine("");
+        pengemudi.Mengemudi(motor);
+        Console.ReadLine();
+    }
+}
+*/
+
+/*
+//INTERFACE
+public interface IBisaDichargeListrik
+{
+    string ChargeBaterai();
+}
+abstract class KendaraanBermotor
+{
+    public abstract string Jalankan();
+}
+abstract class PerangkatMobile
+{
+    public abstract string Operasikan();
+}
+class Mobil : KendaraanBermotor, IBisaDichargeListrik
+{
+    public string ChargeBaterai()
+    {
+        return "Mengisi Baterai Mobil Listrik";
+    }
+    public override string Jalankan()
+    {
+        return "Menjalankan Mobil";
+    }
+}
+class Smartphone : PerangkatMobile, IBisaDichargeListrik
+{
+    public string ChargeBaterai()
+    {
+        return "Mengisi Baterai Smartphone";
+    }
+    public override string Operasikan()
+    {
+        return "Mengoperasikan Smartphone";
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        IBisaDichargeListrik mobil = new Mobil();
+        IBisaDichargeListrik smartphone = new Smartphone();
+        KendaraanBermotor mbl = new Mobil();
+        Console.WriteLine(Charger(mobil));
+        Console.WriteLine(Charger(smartphone));
+        Console.WriteLine("");
+        Console.WriteLine(mbl.Jalankan());
+
+
+        Console.ReadLine();
+    }
+    private static string Charger(IBisaDichargeListrik ch)
+    {
+        return ch.ChargeBaterai();
+    }
+}
+*/
